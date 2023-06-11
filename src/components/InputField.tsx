@@ -5,12 +5,14 @@ import './styles.css';
 interface Props {
     todo: string;
     setTodo: React.Dispatch<React.SetStateAction<string>>;
+    //the type for react events, React.FormEvent
+    handleAdd: (e: React.FormEvent) => void;
 }
 
 //tldr if you're passing props from a parent, you need the inputfield
-const InputField: React.FC<Props> = ({todo, setTodo}) => {
+const InputField: React.FC<Props> = ({todo, setTodo, handleAdd}) => {
     return (
-        <form className="input">
+        <form className="input" onSubmit={handleAdd}>
             <input type="input"
                    value={todo}
                    onChange={
