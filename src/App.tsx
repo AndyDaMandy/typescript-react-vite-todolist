@@ -19,8 +19,10 @@ const App: React.FC = () => {
   return (
     <div className="App">
         <h1 className="heading">Taskify</h1>
-        <InputField todo={todo} setTodo={setTodo} />
-        <TodoList />
+        <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+        {todos.map((todo) => (
+            <li>{todo.todo}</li>
+        ))}
 
     </div>
   )
