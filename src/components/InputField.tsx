@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import './styles.css';
+import "./styles.css";
 
 //this sets up the types for the props. The React.Dispatch comes from the array destrucruting type.
 interface Props {
@@ -24,7 +24,7 @@ const InputField: React.FC<Props> = ({todo, setTodo, handleAdd}) => {
                     //e stands for events. What we're doing here is setting the target value.
                        (e) => setTodo(e.target.value)
                    }
-                   placeholder="Enter" className="input_box"></input>
+                   placeholder="Enter" className="input__box"></input>
             <button className="input_submit" type="submit">Go</button>
         </form>
     )
